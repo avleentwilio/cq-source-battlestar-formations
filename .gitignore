@@ -1,0 +1,7 @@
+.cq
+venv
+__pycache__
+dist
+db.sqlite
+cloudquery.log
+*.swp

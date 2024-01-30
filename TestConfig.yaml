@@ -1,0 +1,19 @@
+kind: source
+spec:
+  name: "battlestar-formations"
+  registry: "grpc"
+  path: "localhost:7777"
+  tables: ['*']
+  destinations: ["sqlite"]
+  spec:
+    username: "svc_username"
+    password: "svc_password"
+    base_url: https://battlestar.corp.twilio.com
+---
+kind: destination
+spec:
+  name: sqlite
+  path: cloudquery/sqlite
+  version: "v2.4.11"
+  spec:
+    connection_string: ./db.sqlite
