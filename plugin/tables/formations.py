@@ -12,8 +12,8 @@ from plugin.client import FormationsClient
 class Formations(Table):
     def __init__(self) -> None:
         super().__init__(
-            name="formation",
-            title="Formation",
+            name="formations",
+            title="Formations",
             columns=[
                 Column("id", pa.string()),
                 Column("name", pa.string()),
