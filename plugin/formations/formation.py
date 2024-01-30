@@ -21,6 +21,10 @@ class FormationClient:
             if not payload.get("items"):
                 print("No deployments found in: {}".format(payload))
             for deployment in payload["items"]:
+                # Skip if the environment is not production
+                if deployment["environment"] != "prod":
+                    continue
+
                 plans = []
                 for plan_response in deployment["plans"]:
                     plans.append({
@@ -62,6 +66,10 @@ class FormationClient:
                 print("No formations found in: {}".format(payload))
             for formation in payload["items"]:
                 for realm in formation["realms"]:
+                    # Skip if the environment is not production
+                    if formation["environment"] != "prod":
+                        continue
+
                     try:
                         result = {
                             "id": formation["id"],
